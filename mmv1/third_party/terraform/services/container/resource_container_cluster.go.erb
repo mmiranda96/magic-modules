@@ -147,6 +147,7 @@ func clusterSchemaNodePoolDefaults() *schema.Schema {
 					MaxItems:    1,
 					Elem: &schema.Resource{
 						Schema: map[string]*schema.Schema{
+							"containerd_config": schemaContainerdConfig(),
 <% unless version == 'ga' -%>
 							"gcfs_config": schemaGcfsConfig(false),
 <% end -%>
